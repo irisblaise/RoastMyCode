@@ -3,6 +3,7 @@
 import type { RoastResponse } from '@/types/roast';
 import { type FC, useState } from 'react';
 import { roastService } from '@/app/services/roastService';
+import { archiveService } from '@/app/services/archiveService';
 import CodeEditor from '@/app/components/CodeEditor';
 import RoastResult from '@/app/components/RoastResult';
 
@@ -27,6 +28,9 @@ const Home: FC = () => {
     try {
       const result = await roastService.getRoast(code);
       setRoastResult(result);
+      if (result.roast && result.score !== null) {
+        archiveService.archiveRoast(code, result);
+      }
     } catch (error) {
       setRoastResult({
         roast: null,
@@ -50,10 +54,14 @@ const Home: FC = () => {
         </p>
       </header>
 
-      <div className="space-y-8">
-        <CodeEditor onSubmit={handleSubmit} isLoading={isAnalyzing} />
-        <RoastResult result={roastResult} isLoading={isAnalyzing} />
-      </div>
+      <CodeEditor onSubmit={handleSubmit} isLoading={isAnalyzing} />
+
+      {(roastResult.roast || roastResult.error) && (
+        <RoastResult 
+          result={roastResult} 
+          isLoading={isAnalyzing}
+        />
+      )}
     </main>
   );
 };

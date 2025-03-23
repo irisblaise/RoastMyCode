@@ -19,6 +19,12 @@ const Navigation: FC = () => {
             >
               Tips
             </Link>
+            <Link 
+              href="/archive"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Archive
+            </Link>
           </div>
         </div>
       </div>

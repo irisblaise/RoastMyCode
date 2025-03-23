@@ -37,7 +37,7 @@ const RoastResult: FC<RoastResultProps> = ({
   }
 
   return (
-    <div className="space-y-6 p-8 backdrop-blur-sm bg-white/30 rounded-lg border border-gray-200 shadow-lg">
+    <div className="space-y-6 p-8 mt-4 backdrop-blur-sm bg-white/30 rounded-lg border border-gray-200 shadow-lg">
       <div className="flex items-start gap-8">
         <div className="flex-1">
           <p className="text-xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-gray-900">
