@@ -16,3 +16,9 @@ export interface RoastResponse {
   explanation: string | null;
   error: string | null;
 }
+
+
+export interface RoastResultProps {
+  result: RoastResponse;
+  isLoading: boolean;
+}

@@ -4,13 +4,7 @@ import { type FC, useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
-
-interface CodeEditorProps {
-  onSubmit: (code: string) => void;
-  isLoading?: boolean;
-  defaultValue?: string;
-  placeholder?: string;
-}
+import { CodeEditorProps } from '@/types/components';
 
 const CodeEditor: FC<CodeEditorProps> = ({
   onSubmit,

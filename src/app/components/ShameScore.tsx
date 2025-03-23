@@ -1,10 +1,7 @@
 'use client';
 
+import { ShameScoreProps } from '@/types/shamescore';
 import { type FC } from 'react';
-
-interface ShameScoreProps {
-  score: number;
-}
 
 const ShameScore: FC<ShameScoreProps> = ({ score }) => {
   const normalizedScore = Math.min(10, Math.max(0, score));

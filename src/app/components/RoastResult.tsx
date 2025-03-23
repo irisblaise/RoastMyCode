@@ -1,11 +1,6 @@
 import { type FC } from 'react';
-import type { RoastResponse } from '@/types/roast';
+import type { RoastResultProps } from '@/types/roast';
 import ShameScore from './ShameScore';
-
-interface RoastResultProps {
-  result: RoastResponse;
-  isLoading: boolean;
-}
 
 const RoastResult: FC<RoastResultProps> = ({ 
   result: { roast, score, explanation, error },
