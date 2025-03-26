@@ -44,7 +44,7 @@ const RoastResult: FC<RoastResultProps> = ({
             </p>
           )}
         </div>
-        <div className="w-32 flex-shrink-0">
+        <div className="flex-shrink-0">
           <ShameScore score={score} />
         </div>
       </div>
